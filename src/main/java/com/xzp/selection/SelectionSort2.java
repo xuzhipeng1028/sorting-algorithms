@@ -48,8 +48,8 @@ public class SelectionSort2 {
                 minPos = arr[j] < arr[minPos] ? j : minPos;
                 maxPos = arr[j] > arr[maxPos] ? j : maxPos;
             }
-            Util.swap(arr,i,minPos);
             maxPos = i == maxPos ? minPos : maxPos;
+            Util.swap(arr,i,minPos);
             Util.swap(arr,rightIndex,maxPos);
             --rightIndex;
         }
