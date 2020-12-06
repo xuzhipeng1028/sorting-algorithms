@@ -1,6 +1,7 @@
 package com.xzp.util;
 
 import java.util.Arrays;
+import java.util.Random;
 
 /**
  * 工具类
@@ -10,6 +11,15 @@ import java.util.Arrays;
 public final class Util {
     private Util(){}
 
+    /**
+     * 生成指定范围的随机整数
+     * @param min 最小值（inclusive）
+     * @param max 最大值（inclusive）
+     * @return
+     */
+    public static int generateRandom(int min,int max){
+        return new Random().nextInt(max) % (max - min + 1) + min;
+    }
     /**
      * 交换数组中两个位置的值
      * @param arr
