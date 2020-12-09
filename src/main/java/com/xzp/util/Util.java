@@ -12,6 +12,35 @@ public final class Util {
     private Util(){}
 
     /**
+     * 获取数组中最大数的位数
+     * @param arr
+     * @return
+     */
+    public static int getMaxBitOfArray(int[] arr){
+        if(arr == null || arr.length == 0) return 0;
+        int max = arr[0];
+        for(int i = 1; i < arr.length; i++){
+            max = arr[i] > max ? arr[i] : max;
+        }
+        return getBitOfNum(max);
+    }
+
+    /**
+     * 得到一个数的位数
+     * @param num
+     * @return
+     */
+    public static int getBitOfNum(int num){
+        if(num == 0) return 1;
+        int count = 0;
+        while(num != 0){
+            num /= 10;
+            ++count;
+        }
+        return count;
+    }
+
+    /**
      * 生成指定范围的随机整数
      * @param min 最小值（inclusive）
      * @param max 最大值（inclusive）
